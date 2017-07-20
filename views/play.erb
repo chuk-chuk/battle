@@ -1,8 +1,21 @@
-<%= @player_1_name %> VS. <%= @player_2_name %>
-<br>
-<%= @player_2_name %>: <%= @player_2_points %>HP
- <br>
-
- <form action="/attack">
- <input type="submit" value="Attack">
- </form>
+<body bgcolor="#8cbcf2">
+  <div style="text-align: center; font-size: 26px">
+    <h1 style="color: #f8f1fe">PLAYERS SCORES</h1>
+  </div>
+  <div style="text-align: center; font-size: 26px; font-weight: bold">
+    <%= @game.player_1.name %> VS <%= @game.player_2.name %>
+  </div>
+    <br>
+  <div style="text-align: center; font-size: 22px">
+    <%= @game.player_1.name %>: <%= @game.player_1.points %>/60 HP
+    <br>
+    <%= @game.player_2.name %>: <%= @game.player_2.points %>/60 HP
+  </div>
+    <br>
+    <br>
+    <form action="/attack">
+      <input type="submit" value="Attack!" style="width: 100%; border: 12px solid white; font-size: 26px; border-radius: 50px ">
+      <br>
+    </form>
+    <center><img src="http://www.war-attack.com/Images/WA.png" style="width: 100%"></center>
+</body>
