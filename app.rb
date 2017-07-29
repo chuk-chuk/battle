@@ -18,14 +18,25 @@ class Battle < Sinatra::Base
 
   get '/play' do
     @game = $game
+    @game.switch_turns unless @game.first_turn == true
     erb :play
   end
 
   get '/attack' do
     @game = $game
-    @game.attack(@game.player_2)
+     @game.attack
     erb :attack
   end
+
+  # post '/play' do if you want to stay on the same page post '/play2' or post '/play3'
+  #   @game = $game
+  #   @game.attack(@game.player_2)
+  #   @game.switch_turns
+  #   redirect '/play'
+  # end
+
+#  What is 'Routing' in a web application? How does it fit into the client-server model of the web? How is it separate from other web application concerns?
+
 
 run! if app_file == $0
 
